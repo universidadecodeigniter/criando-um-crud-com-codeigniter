@@ -1,0 +1,55 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  min-height: 100%;
+  padding-top: 80px;
+  position:relative;
+}
+
+a {
+  color:#dd4814;
+}
+
+#cabecalho-unici {
+  background-color: #dd4814;
+  height: 80px;
+  margin: 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  position:fixed;
+  width: 100%;
+}
+
+#cabecalho-unici img{
+  max-height: 50px;
+}
+
+#cabecalho-unici a{
+  color:#ffffff;
+  display:inline;
+  float: right;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.container {
+  width: auto;
+  max-width: 1170px;
+  padding: 0 15px;
+}
+
+.container .tutorial-link {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.container .tutorial-link a{
+  color:#dd4814;
+  font-size: 15px;
+}
