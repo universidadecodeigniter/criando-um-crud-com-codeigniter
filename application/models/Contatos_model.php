@@ -1,38 +1,19 @@
 <?php
 
-class Contatos_model extends CI_Model {
+class Contatos_model extends MY_Model {
 
     function __construct() {
         parent::__construct();
-    }
-
-    function Get($id){
-      if($id)
-        return $this->db->where('id',$id)->limit(1)->get('contatos')->row();
-      else
-        return FALSE;
+        $this->table = 'contatos';
     }
 
     function Listar() {
         $query = $this->db->get('contatos');
         if ($query->num_rows() > 0) {
-          $contatos = self::formatar($query->result_array());
-          return $contatos;
+          return self::formatar($query->result_array());
         } else {
-          return FALSE;
+          return false;
         }
-    }
-
-    function Inserir($data) {
-        return $this->db->insert('contatos', $data);
-    }
-
-    function Atualizar($contato){
-      return $this->db->where('id', $contato['id'])->update('contatos', $contato);
-    }
-
-    function Excluir($id){
-      return $this->db->where('id', $id)->delete('contatos');
     }
 
     function Formatar($contatos){
@@ -43,7 +24,7 @@ class Contatos_model extends CI_Model {
         }
         return $contatos;
       } else {
-        return FALSE;
+        return false;
       }
     }
 }

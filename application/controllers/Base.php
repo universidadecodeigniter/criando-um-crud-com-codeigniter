@@ -5,7 +5,7 @@ class Base extends CI_Controller {
 
 	public function Index()
 	{
-		$dados['contatos'] = $this->contatos_model->listar();
+		$dados['contatos'] = $this->contatos_model->Listar();
 		$this->load->view('home',$dados);
 	}
 
@@ -36,7 +36,7 @@ class Base extends CI_Controller {
 		if(is_null($id))
 			redirect();
 
-		$dados['contato'] = $this->contatos_model->Get($id);
+		$dados['contato'] = $this->contatos_model->GetById($id);
 
 		$this->load->view('editar',$dados);
 
@@ -48,9 +48,9 @@ class Base extends CI_Controller {
 
 		if($validacao){
 			$contato = $this->input->post();
-			$status = $this->contatos_model->Atualizar($contato);
+			$status = $this->contatos_model->Atualizar($contato['id'],$contato);
 			if(!$status){
-				$dados['contato'] = $this->contatos_model->Get($contato['id']);
+				$dados['contato'] = $this->contatos_model->GetById($contato['id']);
 				$this->session->set_flashdata('error', '<p>Não foi possível atualizar o contato.</p>');
 			}else{
 				$this->session->set_flashdata('success', '<p>Contato atualizado com sucesso.</p>');

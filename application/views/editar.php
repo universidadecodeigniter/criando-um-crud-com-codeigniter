@@ -16,20 +16,20 @@
 		<div class="col-md-4">
 			<div class="form-group">
 				<label>Nome:</label>
-				<input type="text" name="nome" class="form-control" value="<?=$contato->nome?>" required/>
+				<input type="text" name="nome" class="form-control" value="<?=$contato['nome']?>" required/>
 			</div>
 		</div>
 
 		<div class="col-md-4">
 			<div class="form-group">
 				<label>Email:</label>
-				<input type="email" name="email" class="form-control" value="<?=$contato->email?>" required/>
+				<input type="email" name="email" class="form-control" value="<?=$contato['email']?>" required/>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<label><em>Todos os campos são obrigatórios.</em></label>
 			<div class="clearfix"></div>
-			<input type="hidden" name="id" value="<?=$contato->id?>"/>
+			<input type="hidden" name="id" value="<?=$contato['id']?>"/>
 			<input type="submit" value="Salvar" class="btn btn-success" />
 		</div>
 	</form>
