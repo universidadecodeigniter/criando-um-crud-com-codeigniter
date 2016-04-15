@@ -7,15 +7,13 @@ class Contatos_model extends MY_Model {
         $this->table = 'contatos';
     }
 
-    function Listar() {
-        $query = $this->db->get('contatos');
-        if ($query->num_rows() > 0) {
-          return self::formatar($query->result_array());
-        } else {
-          return false;
-        }
-    }
-
+    /**
+    * Formata os contatos para exibição dos dados na home
+    *
+    * @param array $contatos Lista dos contatos a serem formatados
+    *
+    * @return array
+    */
     function Formatar($contatos){
       if($contatos){
         for($i = 0; $i < count($contatos); $i++){
