@@ -38,9 +38,9 @@ class Base extends CI_Controller {
 			$status = $this->contatos_model->Inserir($contato);
 			// Checa o status da operação gravando a mensagem na seção
 			if(!$status){
-				$this->session->set_flashdata('error', '<p>Não foi possível inserir o contato.</p>');
+				$this->session->set_flashdata('error', 'Não foi possível inserir o contato.');
 			}else{
-				$this->session->set_flashdata('success', '<p>Contato inserido com sucesso.</p>');
+				$this->session->set_flashdata('success', 'Contato inserido com sucesso.');
 				// Redireciona o usuário para a home
 				redirect();
 			}
@@ -89,14 +89,14 @@ class Base extends CI_Controller {
 			// Checa o status da operação gravando a mensagem na seção
 			if(!$status){
 				$dados['contato'] = $this->contatos_model->GetById($contato['id']);
-				$this->session->set_flashdata('error', '<p>Não foi possível atualizar o contato.</p>');
+				$this->session->set_flashdata('error', 'Não foi possível atualizar o contato.');
 			}else{
-				$this->session->set_flashdata('success', '<p>Contato atualizado com sucesso.</p>');
+				$this->session->set_flashdata('success', 'Contato atualizado com sucesso.');
 				// Redireciona o usuário para a home
 				redirect();
 			}
 		}else{
-			$this->session->set_flashdata('error', validation_errors('<p>','</p>'));
+			$this->session->set_flashdata('error', validation_errors());
 		}
 
 		// Carrega a view para edição
